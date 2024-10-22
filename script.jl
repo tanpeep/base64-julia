@@ -9,4 +9,6 @@ begin
     println(Binary.intToBinStr(97, 8))
 
     println(Base64.encode("defabc"))
+    println(Base64.encode("ab"))
+    println(Base64.encode("abcde"))
 end

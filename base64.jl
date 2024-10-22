@@ -15,10 +15,18 @@ module Base64
             i += 6
         end
 
+        if length(binStr)%6 > 0
+            binStr = binStr * repeat("0", (6 - (length(binStr)%6)))
+        end
+
         while i < length(binStr) 
             val = Binary.binStrToInt(binStr[i:i+5])
             res = res * mapIntToEncodedChar(val)
             i += 6
+        end
+
+        if length(res)%4 > 0
+            res = res * repeat("=", (4 - (length(res)%4)))
         end
 
         return res
