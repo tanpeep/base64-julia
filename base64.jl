@@ -43,7 +43,7 @@ module Base64
 
         res = ""
         i = 1
-        while i < length(binStr) 
+        while i + 7 <= length(binStr) 
             val = Binary.binStrToInt(binStr[i:i+7])
             res = res * Char(val)
             i += 8
